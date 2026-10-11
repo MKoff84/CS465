@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
+var cors = require('cors');
 
 require('./app_api/models/db');
 
@@ -20,6 +21,9 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 
 app.use(logger('dev'));
+app.use(cors({
+  origin: 'http://localhost:4200'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

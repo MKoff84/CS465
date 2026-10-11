@@ -1,1 +1,41 @@
-<p>trip-card works!</p>
+<div class="card mb-3">
+  <img
+    class="card-img-top"
+    [src]="'/assets/images/' + trip.image"
+    [alt]="trip.name"
+  />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ trip.name }}</h5>
+
+    <h6 class="card-subtitle mb-2 text-muted">
+      {{ trip.resort }}
+    </h6>
+
+    <p class="card-text">
+      {{ trip.description }}
+    </p>
+
+    <p class="card-text">
+      <strong>Trip Code:</strong> {{ trip.code }}
+    </p>
+
+    <p class="card-text">
+      <strong>Duration:</strong> {{ trip.length }}
+    </p>
+
+    <p class="card-text">
+      <strong>Start Date:</strong> {{ trip.start }}
+    </p>
+
+    <p class="card-text">
+      <strong>Price Per Person:</strong> {{ trip.perPerson }}
+    </p>
+
+    <a
+      class="btn btn-primary mt-3"
+      [routerLink]="['/edit-trip', trip.code]">
+      Edit Trip
+    </a>
+  </div>
+</div>
