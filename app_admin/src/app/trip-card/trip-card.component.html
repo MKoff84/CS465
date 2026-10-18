@@ -32,10 +32,28 @@
       <strong>Price Per Person:</strong> {{ trip.perPerson }}
     </p>
 
-    <a
-      class="btn btn-primary mt-3"
-      [routerLink]="['/edit-trip', trip.code]">
-      Edit Trip
-    </a>
+    @if (authService.isLoggedIn()) {
+      <div class="d-flex gap-2 mt-3">
+        <a
+          class="btn btn-primary"
+          [routerLink]="['/edit-trip', trip.code]">
+          Edit Trip
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-danger"
+          [disabled]="isDeleting"
+          (click)="deleteTrip()">
+          {{ isDeleting ? 'Deleting...' : 'Delete Trip' }}
+        </button>
+      </div>
+    }
+
+    @if (deleteError) {
+      <p class="text-danger mt-2" role="alert">
+        {{ deleteError }}
+      </p>
+    }
   </div>
 </div>

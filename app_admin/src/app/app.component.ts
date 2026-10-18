@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,14 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 })
 export class AppComponent {
   title = 'travlr-admin';
+
+  constructor(
+    public authService: AuthenticationService,
+    private router: Router
+  ) {}
+
+  public logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

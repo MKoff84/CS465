@@ -31,4 +31,7 @@ export class TripListingComponent implements OnInit {
       }
     });
   }
+  public onTripDeleted(): void {
+    this.getTrips();
+  }
 }

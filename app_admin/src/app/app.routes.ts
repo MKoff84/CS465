@@ -3,6 +3,8 @@ import { Routes } from '@angular/router';
 import { TripListingComponent } from './trip-listing/trip-listing.component';
 import { AddTripComponent } from './add-trip/add-trip.component';
 import { EditTripComponent } from './edit-trip/edit-trip.component';
+import { LoginComponent } from './login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -10,12 +12,18 @@ export const routes: Routes = [
     component: TripListingComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'add-trip',
-    component: AddTripComponent
+    component: AddTripComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'edit-trip/:tripCode',
-    component: EditTripComponent
+    component: EditTripComponent,
+    canActivate: [authGuard]
   },
   {
     path: '**',

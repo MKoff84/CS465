@@ -7,9 +7,22 @@
       View Trips
     </a>
 
-    <a class="btn btn-success" routerLink="/add-trip">
-      Add New Trip
-    </a>
+    @if (authService.isLoggedIn()) {
+      <a class="btn btn-success me-2" routerLink="/add-trip">
+        Add New Trip
+      </a>
+
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="logout()">
+        Logout
+      </button>
+    } @else {
+      <a class="btn btn-outline-primary" routerLink="/login">
+        Administrator Login
+      </a>
+    }
   </nav>
 
   <router-outlet></router-outlet>
