@@ -299,3 +299,34 @@ travlr/
 Developed as part of CS-465 Full Stack Development at Southern New Hampshire University.
 
 The project demonstrates full-stack application development, MVC design, RESTful services, database integration, single-page application development, authentication, and client-server communication.
+
+---
+
+# CS-465 Module Eight Portfolio Reflection
+
+## Architecture
+
+Throughout the development of Travlr Getaways, I worked with two different approaches to frontend development. The customer-facing website used Express, JavaScript, and Handlebars templates to generate HTML on the server, while the administrative interface used Angular to create a single-page application (SPA). The Express approach generates complete pages for the browser, whereas Angular manages much of the interface through reusable components and updates content without requiring a full-page reload. Working with both approaches helped me understand how different frontend architectures can serve distinct purposes within the same application.
+
+For the backend, I used MongoDB, a NoSQL database, to manage trip and administrator information. MongoDB's document-based structure was particularly useful because the application's data could be represented using JSON-like objects. Combined with Mongoose, MongoDB provided a flexible way to define schemas, validate data, and communicate with the Express API. This approach integrated effectively with the MEAN stack and simplified data exchange between the frontend and backend.
+
+## Functionality
+
+One important concept I developed a stronger understanding of was the distinction between JavaScript and JSON. JavaScript is a programming language used to implement application behavior, while JSON is a lightweight text format used to exchange structured data. In Travlr, JSON connected the frontend and backend through REST API requests and responses. For example, when an administrator retrieves or updates trip information, the Angular application communicates with the Express backend using JSON data.
+
+Refactoring was also an important part of development. As the application evolved, I organized functionality into reusable Angular components and services. The TripDataService centralized API communication, while the AuthenticationService handled login and token management. This separation reduced duplicated code and improved maintainability. Reusable UI components also made the administrative interface more consistent, easier to troubleshoot, and simpler to extend as additional functionality was introduced.
+
+## Testing
+
+Developing Travlr strengthened my understanding of HTTP methods, REST API endpoints, and application security. GET requests retrieve trip information, POST requests create new records, PUT requests update existing records, and DELETE requests remove records. These operations communicate through defined API endpoints, allowing the frontend to interact with the database without accessing it directly.
+
+I used Postman to test API endpoints and verify responses throughout development. Introducing JWT authentication added another layer of complexity because protected operations required valid authorization credentials. Testing involved confirming successful requests, identifying error responses, and verifying that unauthorized requests were rejected. I also tested the administrative interface to ensure that login, logout, navigation, and trip management worked together. This reinforced the importance of testing both individual components and the interactions between the frontend, backend, database, and security layers.
+
+## Reflection
+
+CS-465 provided valuable experience bringing together technologies that I had previously studied individually. Developing Travlr required me to approach software engineering from a systems perspective, considering how frontend interfaces, backend services, databases, APIs, and security mechanisms interact. One of the most rewarding aspects of the course was seeing these separate components evolve into a complete full-stack application.
+
+Throughout the course, I strengthened my skills in JavaScript, TypeScript, Angular, Express, Node.js, MongoDB, Mongoose, REST API development, GitHub, and application testing. I also gained practical experience with component-based architecture, authentication, debugging, and maintaining a project across multiple development stages.
+
+As I pursue opportunities in software engineering, artificial intelligence, and research-oriented development, these skills will be particularly valuable. Even advanced AI applications depend on reliable software infrastructure, secure APIs, efficient data management, and well-designed interfaces. This project strengthened my confidence in developing complete applications and provided a portfolio artifact that demonstrates my ability to integrate multiple technologies into a functioning system.
+
